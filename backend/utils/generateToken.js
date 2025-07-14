@@ -17,7 +17,7 @@ const generateTokenAndSetCookie = (userId, res) => {
     maxAge: 15 * 24 * 60 * 60 * 1000, // Cookie expiration time in milliseconds (15 days)
     httpOnly: true, // Makes the cookie inaccessible to JavaScript in the browser
     sameSite: "strict", //Restricts the cookie to same-site requests for CSRF protection
-    secure: process.env.NODE_ENV !== "developemnt",
+    secure: process.env.NODE_ENV !== "development",
   });
 };
 
