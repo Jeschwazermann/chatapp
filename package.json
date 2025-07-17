@@ -4,7 +4,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "nodemon backend/server.js",
+    "dev:frontend": "cd frontend && npm run dev",
     "test": "node backend/test.js"
   },
   "type": "module",
@@ -22,6 +24,7 @@
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "nodemon": "^3.1.10"
   }
 }
