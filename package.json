@@ -7,6 +7,7 @@
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "nodemon backend/server.js",
     "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "test": "node backend/test.js"
   },
   "type": "module",
